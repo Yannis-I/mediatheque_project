@@ -5,6 +5,6 @@ class MainController extends Controller{
     
     public function index()
     {
-        $this->render('home/index', [], 'home');
+        $this->render('home/index', [], 'default');
     }
 }

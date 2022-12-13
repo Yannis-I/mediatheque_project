@@ -37,23 +37,27 @@ class Router
             $params = explode('/', $_GET['p']);
         }
 
-
-        // var_dump(empty($params));die();
-        if(!empty($params)){
+        if($params[0] != ''){
             // On a au moins 1 paramètre
             // On récupère le nom du contrôleur à instancier
             // On met une majuscule en 1ère lettre, on ajoute le namespace complet avant et on ajoute "Controller" après
-            $controller = '\\App\\Controllers\\'.ucfirst(array_shift($params)).'Controller';
+            $controller = '\\app\\controllers\\'.ucfirst(array_shift($params)).'Controller';
 
-            // On instancie le contrôleur
-            $controller = new $controller();
+            // On vérifie si la class existe
+            if(class_exists($controller)){
+                // On instancie le contrôleur
+                $controller = new $controller();
 
-            // On récupère le 2ème paramètre d'URL
-            $action = (isset($params[0])) ? array_shift($params) : 'index';
+                // On récupère le 2ème paramètre d'URL
+                $action = (isset($params[0])) ? array_shift($params) : 'index';
 
-            if(method_exists($controller, $action)){
-                // Si il reste des paramètres on les passe à la méthode
-                (isset($params[0])) ? call_user_func_array([$controller, $action], $params) : $controller->$action();
+                if(method_exists($controller, $action)){
+                    // Si il reste des paramètres on les passe à la méthode
+                    (isset($params[0])) ? call_user_func_array([$controller, $action], $params) : $controller->$action();
+                }else{
+                    http_response_code(404);
+                    echo "La page recherchée n'existe pas";
+                }
             }else{
                 http_response_code(404);
                 echo "La page recherchée n'existe pas";
