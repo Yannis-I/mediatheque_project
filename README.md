@@ -2,9 +2,11 @@
 
 ## Environnement
 
-APACHE 2.4
-PHP 8.1
-MYSQL 8.0
+<ul>
+    <li>APACHE 2.4</li>
+    <li>PHP 8.1</li>
+    <li>MYSQL 8.0</li>
+</ul>
 
 ## Redirection d'URL
 
