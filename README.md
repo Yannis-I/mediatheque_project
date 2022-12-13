@@ -25,7 +25,7 @@ Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour
 
 <ul>
     <li>
-    Le fichier <b>base.sql</b> à la racine du projet contient toutes les commandes pour créer la base de données.
+    Le fichier <b>DB_Mediatheque.sql</b> à la racine du projet contient toutes les commandes pour créer la base de données.
     </li>
     <li>
     Le fichier de configuration pour l'accès à la base de données se trouve dans <b>core/Db.php</b>
@@ -34,4 +34,4 @@ Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour
 
 ### Le SCSS
 
-Le scss est déjà compilé. Pour le modifié, utilisé l'extension VScode <b>Live Sass Compiler</b>. Le fichier de configuration de LSC est déjà paramétré et se trouve dans <b>.vscode/settings.json</b>
+Le scss est déjà compilé. Pour le modifié, utilisez l'extension VScode <b>Live Sass Compiler</b>. Le fichier de configuration de LSC est déjà paramétré et se trouve dans <b>.vscode/settings.json</b>
