@@ -1,0 +1,20 @@
+{
+  "liveSassCompile.settings.forceBaseDirectory": "/scss",
+
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "expanded",
+      "extensionName": ".css",
+      "savePath": "/scss/css-expanded"
+    },
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": "/assets/css"
+    }
+  ],
+
+  "liveSassCompile.settings.generateMap": false,
+
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"]
+}
