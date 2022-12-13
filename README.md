@@ -10,7 +10,7 @@
 
 ## Redirection d'URL
 
-La redirection d'url se fait via une redirection automatique du server apache sur index.php puis un router en php. La redirection automatique du server se configure à partir du fichier ".htaccess" à la racine du projet.
+La redirection d'url se fait via une redirection automatique du server apache sur index.php puis un router en php. La redirection automatique du server se configure à partir du fichier <em>.htaccess</em> à la racine du projet.
 
 Cependant apache n'est parfois pas configuré pour lire automatiquement le fichier ."htaccess". Si la redirection ne fonctionne pas, testez : "<b>sudo a2enmod rewrite</b>" (pour linux).
 Sinon, il faut paramétrer le server apache pour activer l'option. Voir la DOC Apache.
