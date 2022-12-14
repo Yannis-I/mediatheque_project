@@ -42,4 +42,4 @@ Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour
 
 ### Le SCSS
 
-Le scss est déjà compilé. Pour le modifier, utilisez l'extension VScode <b>Live Sass Compiler</b>. Le fichier de configuration de LSC est déjà paramétré et se trouve dans <b>.vscode/settings.json</b>
+Le scss est déjà compilé. Pour le modifier, utilisez l'extension VScode <b>Live Sass Compiler</b>. Le fichier de configuration de LSC est déjà paramétré et se trouve dans <b>.vscode/settings.json</b>. Appuyez sur le bouton "<b>Watch Sass</b>" sur la barre de contrôle tout en bas de votre éditeur VSCode pour activer l'extension et compiler le scss.
