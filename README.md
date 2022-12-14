@@ -33,6 +33,7 @@ Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour
         <li>
         Tapez ensuite la commande : <b>source <adresse du fichier>/DB_Mediatheque.sql</b>
         </li>
+    </ol>
     </li>
     <li>
     Le fichier de configuration pour l'accès à la base de données se trouve dans <b>core/Db.php</b>
