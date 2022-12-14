@@ -31,7 +31,7 @@ Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour
         Connectez-vous sur votre serveur MySQL avec : <b>sudo mysql</b>
         </li>
         <li>
-        Tapez ensuite la commande : <b>source &lt;adresse du fichier&gt;/DB_Mediatheque.sql</b>
+        Tapez ensuite la commande : <b>source &lt;<em>adresse du fichier</em>&gt;/DB_Mediatheque.sql</b>
         </li>
     </ol>
     </li>
