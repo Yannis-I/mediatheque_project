@@ -25,7 +25,14 @@ Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour
 
 <ul>
     <li>
-    Le fichier <b>DB_Mediatheque.sql</b> à la racine du projet contient toutes les commandes pour créer la base de données.
+    Le fichier <b>DB_Mediatheque.sql</b> à la racine du projet contient toutes les commandes pour créer la base de données.</br>
+    <ol>
+        <li>
+        Connectez-vous sur votre serveur MySQL avec : <b>sudo mysql</b>
+        </li>
+        <li>
+        Tapez ensuite la commande : <b>source <adresse du fichier>/DB_Mediatheque.sql</b>
+        </li>
     </li>
     <li>
     Le fichier de configuration pour l'accès à la base de données se trouve dans <b>core/Db.php</b>

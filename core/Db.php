@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+namespace core;
 
 // On "importe" PDO
 use PDO;
@@ -13,7 +13,7 @@ class Db extends PDO
 
     // Informations de connexion
     private const DBHOST = 'localhost';
-    private const DBUSER = 'appMediatheque';
+    private const DBUSER = 'AppMediatheque';
     private const DBPASS = 'azerty';
     private const DBNAME = 'Mediatheque';
 
@@ -27,7 +27,7 @@ class Db extends PDO
             parent::__construct($_dsn, self::DBUSER, self::DBPASS);
 
             $this->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
-            $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+            $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
             $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch(PDOException $e){
             die($e->getMessage());
