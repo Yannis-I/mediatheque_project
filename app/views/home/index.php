@@ -1,27 +1,18 @@
-<pre>
-<?php
-
-$acteur1 =
-    [
-        "id" => 10,
-        "nom" => "Mortensen",
-        "Prenom" => "Viggo",
-        "url_photo" => "viggo",
-        "personnage" => "Aragorn"
-    ];
-
-$acteur2 =
-    [
-        "id" => 10,
-        "nom" => "Mortensen",
-        "Prenom" => "Viggo",
-        "url_photo" => "viggo",
-        "personnage" => "Aragorn"
-    ];
-
-$acteurs = [$acteur1, $acteur2];
-
-var_dump($acteurs);
-
-?>
-</pre>
+<div class="container">
+  <div class="box">
+    <img src="https://source.unsplash.com/1000x800">
+    <span>CSS</span>
+  </div>
+  <div class="box">
+    <img src="https://source.unsplash.com/1000x802">
+    <span>Image</span>
+  </div>
+  <div class="box">
+    <img src="https://source.unsplash.com/1000x804">
+    <span>Hover</span>
+  </div>
+  <div class="box">
+    <img src="https://source.unsplash.com/1000x806">
+    <span>Effect</span>
+  </div>
+</div>

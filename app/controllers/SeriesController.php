@@ -7,4 +7,8 @@ class SeriesController extends Controller{
     {
         $this->render('series/index', [], 'default');
     }
+
+    public function details($id){
+        $this->render('series/details', [], 'default');
+    }
 }

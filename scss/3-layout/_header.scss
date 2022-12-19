@@ -1,0 +1,51 @@
+header {
+  width: 100%;
+  background-color: $color-dark-grey;
+  color: $color1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  transition: scale 0.3s;
+
+  nav {
+    display: flex;
+    max-width: $max-width;
+    margin: auto;
+
+    ul {
+      display: flex;
+      margin: 0 auto;
+      height: 50px;
+
+      a {
+        text-decoration: none;
+        text-decoration: none;
+        text-decoration-color: $color1;
+        text-decoration-line: none;
+        text-decoration-style: solid;
+        color: $color1;
+
+        div {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          transition: background-color 0.3s, scale 0.3s;
+
+          li {
+            list-style: none;
+            width: 150px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.4em;
+          }
+
+          &:hover {
+            background-color: $color1;
+            color: $color-dark-grey;
+            scale: 1.1;
+          }
+        }
+      }
+    }
+  }
+}

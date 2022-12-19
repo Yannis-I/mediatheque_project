@@ -1,0 +1,1 @@
+<h1><?= $film->getTitre() ?></h1>

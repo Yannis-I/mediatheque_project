@@ -10,10 +10,35 @@
 </head>
 
 <body>
+    <header>
+        <nav>
+            <ul>
+                <a href="/">
+                    <div>
+                        <li>ACCEUIL</li>
+                    </div>
+                </a>
+                <a href="/films">
+                    <div>
+                        <li>FILMS</li>
+                    </div>
+                </a>
+                <a href="/series">
+                    <div>
+                        <li>SÉRIES</li>
+                    </div>
+                </a>
+            </ul>
+        </nav>
+    </header>
 
     <main class="main-container">
         <?= $contenu ?>
     </main>
+
+    <footer>
+        <p>&copy; Cyb3rToY all right reserved</p>
+    </footer>
 
 </body>
 

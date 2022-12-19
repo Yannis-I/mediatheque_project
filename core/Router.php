@@ -15,18 +15,19 @@ class Router
         // On retire le "trailing slash" éventuel de l'URL
         // On récupère l'URL
         $uri = $_SERVER['REQUEST_URI'];
-        // $uri = str_replace("/PHP-Oriente-Objet", "", $uri);
 
         // On vérifie que uri n'est pas vide et se termine par un /
         if(!empty($uri) && $uri != '/' && $uri[-1] === "/"){
             // On enlève le /
             $uri = substr($uri, 0, -1);
 
+            var_dump($uri);
             // On envoie un code de redirection permanente
             http_response_code(301);
 
             // On redirige vers l'URL sans /
             header('Location: '.$uri);
+            die();
         }
 
         // On gère les paramètres d'URL

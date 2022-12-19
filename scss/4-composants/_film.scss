@@ -1,0 +1,45 @@
+.film {
+  display: flex;
+  border-bottom: 1px solid $color-light-grey;
+  padding: 20px;
+  transition: background-color 0.3s, scale 0.3s, box-shadow 0.3s,
+    border-radius 0.3s;
+  height: 160px;
+
+  &__affiche {
+    border-radius: 15px;
+  }
+
+  &__content {
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+
+    &__titre {
+      margin-top: 0;
+    }
+
+    &__datas {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &__synopsis {
+      text-align: justify;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+  }
+
+  &:hover {
+    background-color: $color-light-grey;
+    border-radius: 15px;
+    cursor: pointer;
+    scale: 1.02;
+    box-shadow: 0 0 10px 0 black;
+  }
+}

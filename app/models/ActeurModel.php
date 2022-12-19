@@ -1,35 +1,17 @@
 <?php
+
 namespace app\models;
 
-class ActeurModel extends ModelDAO /*implements InterfaceDao*/{
-    private int $id;
-    private string $nom;
-    private string $prenom;
-    private string $url_photo;
+class ActeurModel extends HumanModel {
+    private string $role = 'ACTOR';
 
-    public function getId():int{
-        return $this->id;
+    public function getRole():string{
+        return $this->role;
     }
-    public function setId($id):void{
-        $this->id = $id;
-    }
-    public function getNom():string{
-        return $this->nom;
-    }
-    public function setNom($nom):void{
-        $this->nom = $nom;
-    }
-    public function getPrenom():string{
-        return $this->prenom;
-    }
-    public function setPrenom($prenom):void{
-        $this->prenom = $prenom;
-    }
-    public function getUrl_photo():string{
-        return $this->url_photo;
-    }
-    public function setUrl_photo(string $url_photo):void{
-        $this->url_photo = $url_photo;
+
+    public function setRole(string $role):self{
+        $this->role = $role;
+        return $this;
     }
 }
 

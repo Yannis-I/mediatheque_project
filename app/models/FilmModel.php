@@ -1,13 +1,16 @@
 <?php
 namespace app\models;
 
-class FilmModel extends MovieModel /*implements InterfaceDao*/{
+class FilmModel extends MovieModel {
     private string $duree;
     public function getDuree():string{
-        return $this->duree;
+        $dureeFormat = substr(str_replace(":", "h", substr($this->duree, 0, -3)), 1);
+        return $dureeFormat;
+        // return $this->duree;
     }
-    public function setDuree($duree):void{
+    public function setDuree($duree):self{
         $this->duree = $duree;
+        return $this;
     }
 }
 ?>
