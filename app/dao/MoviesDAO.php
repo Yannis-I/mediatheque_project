@@ -38,7 +38,7 @@ abstract class MoviesDAO extends DAO implements InterfaceDAO {
         $resultMovie = parent::requete($requeteMovie, [$id])->fetch();
         
         // On instancie filmModel  ou serieModels
-        $instance = (object)$this->createMovies($resultMovie);
+        $instance = (object)$this->createMovies([$resultMovie]);
 
         return $instance;
     }

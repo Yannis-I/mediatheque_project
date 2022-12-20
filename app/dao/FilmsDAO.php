@@ -4,7 +4,7 @@ namespace app\dao;
 
 use app\models\FilmModel;
 
-class FilmsDAO extends MoviesDAO
+final class FilmsDAO extends MoviesDAO
 {
     use MoviesTraitDAO;
 
@@ -13,7 +13,7 @@ class FilmsDAO extends MoviesDAO
     }
 
     /**
-     * Lister tout les films
+     * Lister tous les films
      * @return array FilmModel
      */
     public function findAll():array{
@@ -23,7 +23,7 @@ class FilmsDAO extends MoviesDAO
         //On va chercher la durée des films
         //On créer la requête
         $requeteDuree = "SELECT Films.duree FROM Films WHERE id = ?";
-
+        
         foreach($listFilms as $film){
             $result = $this->requete($requeteDuree, [$film->getId()])->fetch();
             $film->setDuree($result['duree']);
@@ -46,17 +46,15 @@ class FilmsDAO extends MoviesDAO
         return $film;
     }
 
-    //TODO: Jointure sur la table Films
     public function findByActorId(int $actorID): array{
-        $requeteListFilmsId = "SELECT Acteurs_Movies.id_movie FROM Acteurs_Movies WHERE id_acteur = ?;";
+        $requeteListFilmsId = "SELECT Acteurs_Movies.id_movie AS id FROM Acteurs_Movies RIGHT JOIN Films ON Acteurs_Movies.id_movie = Films.id WHERE Acteurs_Movies.id_acteur = ? GROUP BY Acteurs_Movies.id_movie;";
 
-        return $this->findByHumanId($actorID, $requeteListFilmsId);
+        return $this->findByHumanId($requeteListFilmsId, $actorID);
     }
 
-    //TODO: Jointure sur la table Films
     public function findByDirectorId(int $directorID): array{
-        $requeteListFilmsId = "SELECT Movies.id_movie FROM Movies WHERE id_director = ?;";
+        $requeteListFilmsId = "SELECT Movies.id AS id FROM Movies RIGHT JOIN Films ON Movies.id = Films.id WHERE id_director = ? GROUP BY Movies.id;";
 
-        return $this->findByHumanId($directorID, $requeteListFilmsId);
+        return $this->findByHumanId($requeteListFilmsId, $directorID);
     }
 }

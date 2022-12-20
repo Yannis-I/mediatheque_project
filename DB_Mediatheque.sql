@@ -18,7 +18,7 @@ CREATE TABLE Human (
 CREATE TABLE Movies (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     titre VARCHAR(128) NOT NULL,
-    id_director INT NOT NULL,
+    id_director INT,
     annee YEAR NOT NULL,
     synopsis TEXT NOT NULL,
     url_affiche VARCHAR(40),

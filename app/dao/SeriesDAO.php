@@ -4,7 +4,7 @@ namespace app\dao;
 
 use app\models\SerieModel;
 
-class SeriesDAO extends MoviesDAO {
+final class SeriesDAO extends MoviesDAO {
     use MoviesTraitDAO;
 
     public function __construct(){
@@ -50,17 +50,15 @@ class SeriesDAO extends MoviesDAO {
         return $serie;
     }
 
-    //TODO: Jointure sur la table Series_Saisons
     public function findByActorId(int $actorID): array{
-        $requeteListFilmsId = "SELECT Acteurs_Movies.id_movie FROM Acteurs_Movies WHERE id_acteur = ?;";
+        $requeteListSeriesId = "SELECT Acteurs_Movies.id_movie AS id FROM Acteurs_Movies RIGHT JOIN Series_Saisons ON Acteurs_Movies.id_movie = Series_Saisons.id WHERE id_acteur = ? GROUP BY Series_Saisons.id;";
 
-        return $this->findByHumanId($actorID, $requeteListFilmsId);
+        return $this->findByHumanId($requeteListSeriesId, $actorID);
     }
 
-    //TODO: Jointure sur la table Series_Saisons
     public function findByDirectorId(int $directorID): array{
-        $requeteListFilmsId = "SELECT Movies.id_movie FROM Movies WHERE id_director = ?;";
+        $requeteListSeriesId = "SELECT Movies.id FROM Movies RIGHT JOIN Series_Saisons ON Movies.id = Series_Saisons.id WHERE Movies.id_director = ? GROUP BY Series_Saisons.id;";
 
-        return $this->findByHumanId($directorID, $requeteListFilmsId);
+        return $this->findByHumanId($requeteListSeriesId, $directorID);
     }
 }

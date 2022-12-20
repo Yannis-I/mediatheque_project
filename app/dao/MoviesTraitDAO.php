@@ -3,13 +3,13 @@
 namespace app\dao;
 
 Trait MoviesTraitDAO {
-    private function findByHumanId(int $humanId, string $sql):array{
-        $resultListFilmsId = $this->requete($sql, [$humanId])->fetchAll();
+    private function findByHumanId(string $sql, int $humanId):array{
+        $resultListMoviesId = $this->requete($sql, [$humanId])->fetchAll();
 
-        $listFilms = [];
-        foreach($resultListFilmsId as $tabFilmsId){
-            array_push($listFilms, $this->findByID($tabFilmsId["id_movie"]));
+        $listMovies = [];
+        foreach($resultListMoviesId as $tabMoviesId){
+            array_push($listMovies, $this->findByID($tabMoviesId["id"]));
         }
-        return $listFilms;
+        return $listMovies;
     }
 }
