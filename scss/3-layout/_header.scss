@@ -5,7 +5,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  transition: scale 0.3s;
 
   nav {
     display: flex;
@@ -29,7 +28,7 @@ header {
           height: 100%;
           display: flex;
           align-items: center;
-          transition: background-color 0.3s, scale 0.3s;
+          transition: background-color 0.2s, color 0.2s;
 
           li {
             list-style: none;
@@ -42,7 +41,6 @@ header {
           &:hover {
             background-color: $color1;
             color: $color-dark-grey;
-            scale: 1.1;
           }
         }
       }

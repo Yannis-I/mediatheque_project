@@ -2,12 +2,31 @@
   display: flex;
   border-bottom: 1px solid $color-light-grey;
   padding: 20px;
-  transition: background-color 0.3s, scale 0.3s, box-shadow 0.3s,
-    border-radius 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
   height: 160px;
 
+  .clickable {
+    color: $color2-1;
+    //font-weight: bold;
+    text-decoration: none;
+
+    &:hover {
+      color: $color3;
+      text-decoration: underline;
+    }
+  }
+
+  & > a {
+    display: flex;
+    width: 120px;
+    margin: -10px;
+  }
+
   &__affiche {
-    border-radius: 15px;
+    transition: scale 0.3s;
+    &:hover {
+      scale: 1.05;
+    }
   }
 
   &__content {
@@ -15,31 +34,76 @@
     display: flex;
     flex-direction: column;
 
-    &__titre {
-      margin-top: 0;
-    }
-
-    &__datas {
+    &__header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+
+      &__titre {
+        margin-top: 0;
+        margin-bottom: 10px;
+        width: fit-content;
+
+        span {
+          font-weight: normal;
+          font-size: 0.9em;
+          text-decoration: none !important;
+        }
+        &:hover {
+          text-decoration: none;
+        }
+      }
     }
 
-    &__synopsis {
-      text-align: justify;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      margin-bottom: 0;
+    &__grid {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+
+      &__datas {
+        width: 25%;
+        display: grid;
+        grid-template-areas:
+          "pre nom"
+          "pre nom"
+          ". nom"
+          ". nom";
+        grid-template-columns: 25% 75%;
+
+        .nom {
+          grid-area: nom;
+
+          .acteurs {
+            margin-top: 5px;
+          }
+        }
+        .datas {
+          grid-area: data;
+        }
+        .pre {
+          grid-area: pre;
+
+          .marge {
+            margin-top: 5px;
+          }
+        }
+      }
+
+      &__synopsis {
+        width: 75%;
+        height: 95px;
+        text-align: justify;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin: 0 30px 0 20px;
+      }
     }
   }
 
   &:hover {
-    background-color: $color-light-grey;
-    border-radius: 15px;
-    cursor: pointer;
-    scale: 1.02;
+    background-color: $color2-3;
     box-shadow: 0 0 10px 0 black;
   }
 }

@@ -15,8 +15,6 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  -webkit-transition: scale 0.3s;
-  transition: scale 0.3s;
 }
 header nav {
   display: -webkit-box;
@@ -51,8 +49,8 @@ header nav ul a div {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: background-color 0.3s, scale 0.3s;
-  transition: background-color 0.3s, scale 0.3s;
+  -webkit-transition: background-color 0.2s, color 0.2s;
+  transition: background-color 0.2s, color 0.2s;
 }
 header nav ul a div li {
   list-style: none;
@@ -64,7 +62,6 @@ header nav ul a div li {
 header nav ul a div:hover {
   background-color: #f7aa00;
   color: #1f2830;
-  scale: 1.1;
 }
 
 footer {
@@ -142,14 +139,33 @@ main h1 {
   display: flex;
   border-bottom: 1px solid #e0e4e7;
   padding: 20px;
-  -webkit-transition: background-color 0.3s, scale 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
-  transition: background-color 0.3s, scale 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
-  transition: background-color 0.3s, scale 0.3s, box-shadow 0.3s, border-radius 0.3s;
-  transition: background-color 0.3s, scale 0.3s, box-shadow 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+  -webkit-transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   height: 160px;
 }
+.film .clickable {
+  color: #235784;
+  text-decoration: none;
+}
+.film .clickable:hover {
+  color: #692384;
+  text-decoration: underline;
+}
+.film > a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 120px;
+  margin: -10px;
+}
 .film__affiche {
-  border-radius: 15px;
+  -webkit-transition: scale 0.3s;
+  transition: scale 0.3s;
+}
+.film__affiche:hover {
+  scale: 1.05;
 }
 .film__content {
   padding-left: 40px;
@@ -161,10 +177,7 @@ main h1 {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.film__content__titre {
-  margin-top: 0;
-}
-.film__content__datas {
+.film__content__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -176,19 +189,64 @@ main h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.film__content__synopsis {
+.film__content__header__titre {
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.film__content__header__titre span {
+  font-weight: normal;
+  font-size: 0.9em;
+  text-decoration: none !important;
+}
+.film__content__header__titre:hover {
+  text-decoration: none;
+}
+.film__content__grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 100%;
+}
+.film__content__grid__datas {
+  width: 25%;
+  display: grid;
+  grid-template-areas: "pre nom" "pre nom" ". nom" ". nom";
+  grid-template-columns: 25% 75%;
+}
+.film__content__grid__datas .nom {
+  grid-area: nom;
+}
+.film__content__grid__datas .nom .acteurs {
+  margin-top: 5px;
+}
+.film__content__grid__datas .datas {
+  grid-area: data;
+}
+.film__content__grid__datas .pre {
+  grid-area: pre;
+}
+.film__content__grid__datas .pre .marge {
+  margin-top: 5px;
+}
+.film__content__grid__synopsis {
+  width: 75%;
+  height: 95px;
   text-align: justify;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  margin-bottom: 0;
+  margin: 0 30px 0 20px;
 }
 .film:hover {
-  background-color: #e0e4e7;
-  border-radius: 15px;
-  cursor: pointer;
-  scale: 1.02;
+  background-color: #f1fdff;
   -webkit-box-shadow: 0 0 10px 0 black;
           box-shadow: 0 0 10px 0 black;
 }

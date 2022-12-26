@@ -75,13 +75,12 @@ abstract class HumansDAO extends DAO implements InterfaceDAO{
         }else if($this->role == "DIRECTOR"){
             $object = "app\models\DirectorModel";
         }
-
         $instance = new $object;
         $instance->setId($params['id']);
         $instance->setNom($params['nom']);
-        $instance->setPrenom(['prenom']);
-        $instance->setBio(['bio']);
-        $instance->setUrl_photo(['url_photo']);
+        $instance->setPrenom($params['prenom']);
+        $instance->setBio($params['bio']);
+        $instance->setUrl_photo($params['url_photo']);
 
         return $instance;
     }

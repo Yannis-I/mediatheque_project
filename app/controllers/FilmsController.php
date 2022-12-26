@@ -1,6 +1,8 @@
 <?php
 namespace app\controllers;
 
+use app\dao\ActeursDAO;
+use app\dao\DirectorsDAO;
 use app\dao\FilmsDAO;
 
 class FilmsController extends Controller{
@@ -10,13 +12,31 @@ class FilmsController extends Controller{
         $dao = new FilmsDAO;
         $listFilms = $dao->findAll();
 
-        $this->render('films/index', compact("listFilms"), 'default');
+        $datas = [];
+
+        foreach($listFilms as $film){
+            $acteursDao = new ActeursDAO;
+            $acteurs = $acteursDao->findByFilmsID($film->getId());
+            
+            $realisateurDao = new DirectorsDAO;
+            $realisateur = $realisateurDao->findByFilmsID($film->getId());
+
+            array_push($datas, ["film" => $film, "acteurs" => $acteurs, "realisateur" => $realisateur]);
+        }
+
+        $this->render('films/index', compact("datas"), 'default');
     }
 
     public function details($id){
-        $dao = new FilmsDAO;
-        $film = $dao->findById($id);
+        $filmsDao = new FilmsDAO;
+        $film = $filmsDao->findById($id);
         
-        $this->render('films/details', compact("film"), 'default');
+        $acteursDao = new ActeursDAO;
+        $acteurs = $acteursDao->findByFilmsID($film->getId());
+        
+        $realisateurDao = new DirectorsDAO;
+        $realisateur = $realisateurDao->findByFilmsID($film->getId());
+        
+        $this->render('films/details', compact("film", "realisateur", "acteurs"), 'default');
     }
 }
