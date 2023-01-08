@@ -1,4 +1,4 @@
-.film {
+.movie {
   display: flex;
   border-bottom: 1px solid $color-light-grey;
   padding: 20px;
@@ -51,6 +51,7 @@
         }
         &:hover {
           text-decoration: none;
+          color: $color2-1;
         }
       }
     }
@@ -98,6 +99,7 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         margin: 0 30px 0 20px;
+        font-style: oblique;
       }
     }
   }

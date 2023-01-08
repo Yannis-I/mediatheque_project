@@ -133,7 +133,7 @@ main h1 {
   height: 100%;
 }
 
-.film {
+.movie {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,29 +145,29 @@ main h1 {
   transition: background-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
   height: 160px;
 }
-.film .clickable {
+.movie .clickable {
   color: #235784;
   text-decoration: none;
 }
-.film .clickable:hover {
+.movie .clickable:hover {
   color: #692384;
   text-decoration: underline;
 }
-.film > a {
+.movie > a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 120px;
   margin: -10px;
 }
-.film__affiche {
+.movie__affiche {
   -webkit-transition: scale 0.3s;
   transition: scale 0.3s;
 }
-.film__affiche:hover {
+.movie__affiche:hover {
   scale: 1.05;
 }
-.film__content {
+.movie__content {
   padding-left: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -177,7 +177,7 @@ main h1 {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.film__content__header {
+.movie__content__header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,22 +189,23 @@ main h1 {
       -ms-flex-pack: justify;
           justify-content: space-between;
 }
-.film__content__header__titre {
+.movie__content__header__titre {
   margin-top: 0;
   margin-bottom: 10px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
 }
-.film__content__header__titre span {
+.movie__content__header__titre span {
   font-weight: normal;
   font-size: 0.9em;
   text-decoration: none !important;
 }
-.film__content__header__titre:hover {
+.movie__content__header__titre:hover {
   text-decoration: none;
+  color: #235784;
 }
-.film__content__grid {
+.movie__content__grid {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -214,28 +215,28 @@ main h1 {
           flex-direction: row;
   height: 100%;
 }
-.film__content__grid__datas {
+.movie__content__grid__datas {
   width: 25%;
   display: grid;
   grid-template-areas: "pre nom" "pre nom" ". nom" ". nom";
   grid-template-columns: 25% 75%;
 }
-.film__content__grid__datas .nom {
+.movie__content__grid__datas .nom {
   grid-area: nom;
 }
-.film__content__grid__datas .nom .acteurs {
+.movie__content__grid__datas .nom .acteurs {
   margin-top: 5px;
 }
-.film__content__grid__datas .datas {
+.movie__content__grid__datas .datas {
   grid-area: data;
 }
-.film__content__grid__datas .pre {
+.movie__content__grid__datas .pre {
   grid-area: pre;
 }
-.film__content__grid__datas .pre .marge {
+.movie__content__grid__datas .pre .marge {
   margin-top: 5px;
 }
-.film__content__grid__synopsis {
+.movie__content__grid__synopsis {
   width: 75%;
   height: 95px;
   text-align: justify;
@@ -244,9 +245,161 @@ main h1 {
   -webkit-box-orient: vertical;
   overflow: hidden;
   margin: 0 30px 0 20px;
+  font-style: oblique;
 }
-.film:hover {
+.movie:hover {
   background-color: #f1fdff;
   -webkit-box-shadow: 0 0 10px 0 black;
           box-shadow: 0 0 10px 0 black;
+}
+
+.movie-details {
+  width: 100%;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.movie-details h1 {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.movie-details__base {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+.movie-details__base__affiche img {
+  width: auto;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.movie-details__base__datas {
+  margin-left: 30px;
+  margin-top: 20px;
+}
+.movie-details__base__datas__duree, .movie-details__base__datas__nbrSaisons, .movie-details__base__datas__nbrEpisodes {
+  margin-top: 10px;
+}
+.movie-details__base__datas__synopsis {
+  text-align: justify;
+  margin-top: 30px;
+  padding-right: 30px;
+  font-style: oblique;
+}
+.movie-details__guests {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 30px auto 0 auto;
+}
+.movie-details__guests a {
+  color: #235784;
+  text-decoration: none;
+}
+.movie-details__guests__acteurs {
+  margin-left: 50px;
+}
+.movie-details__guests__acteurs__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.movie-details__guests .item {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-right: 50px;
+  text-align: center;
+  cursor: pointer;
+}
+.movie-details__guests .item:hover > .photo > img {
+  -webkit-box-shadow: 0 0 10px #1f2830;
+          box-shadow: 0 0 10px #1f2830;
+  border-radius: 15px;
+}
+.movie-details__guests .item:hover > .nom {
+  color: #692384;
+  text-decoration: underline;
+}
+.movie-details__guests .item__photo {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: auto;
+  height: 110px;
+  width: 110px;
+}
+.movie-details__guests .item__photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: border-radius 0.3s, -webkit-box-shadow 0.3s;
+  transition: box-shadow 0.3s, border-radius 0.3s;
+  transition: box-shadow 0.3s, border-radius 0.3s, -webkit-box-shadow 0.3s;
+}
+.movie-details__guests .item .nom {
+  font-weight: bold;
+  margin-top: 5px;
+  -webkit-transition: color 0.3s, -webkit-text-decoration 0.3s;
+  transition: color 0.3s, -webkit-text-decoration 0.3s;
+  transition: color 0.3s, text-decoration 0.3s;
+  transition: color 0.3s, text-decoration 0.3s, -webkit-text-decoration 0.3s;
+}
+.movie-details__guests .item .personnage {
+  font-style: italic;
+}
+.movie-details__saisons {
+  margin-top: 50px;
+}
+.movie-details__saisons h3 {
+  text-align: center;
+}
+.movie-details__saisons table {
+  margin: 10px auto 0 auto;
+}
+.movie-details__saisons table th,
+.movie-details__saisons table td {
+  padding: 10px;
+  border: none;
+  margin: 0;
+}
+.movie-details__saisons table th {
+  text-align: right;
+}
+.movie-details__saisons table td {
+  width: 20px;
+  text-align: center;
+}
+.movie-details__saisons table .colImpaire {
+  background-color: #e0e4e7;
 }
