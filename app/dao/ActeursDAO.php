@@ -24,7 +24,7 @@ final class ActeursDAO extends HumansDAO{
     }
 
     public function findBySeriesID(int $id): array{
-        $requete = "SELECT Acteurs_Movies.id_acteur as id FROM Acteurs_Movies LEFT JOIN Series_Saisons ON Acteurs_Movies.id = Series_Saisons.id WHERE Movies.id = ?;";
+        $requete = "SELECT Acteurs_Movies.id_acteur as id FROM Acteurs_Movies LEFT JOIN Series_Saisons ON Acteurs_Movies.id_movie = Series_Saisons.id WHERE Series_Saisons.id = ? GROUP BY Acteurs_Movies.id_acteur;";
         return $this->findByMoviesId($requete, $id);
     }
 }

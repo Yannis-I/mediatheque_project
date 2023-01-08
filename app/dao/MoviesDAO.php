@@ -10,7 +10,7 @@ abstract class MoviesDAO extends DAO implements InterfaceDAO {
         // On prépare la requêtes 
         $requeteFilms = "SELECT Movies.id, Movies.titre, Movies.id_director, Movies.annee, Movies.url_affiche, Movies.synopsis 
                          FROM Movies RIGHT JOIN " . $this->table 
-                         ." ON Movies.id = " . $this->table . ".id;";
+                         ." ON Movies.id = " . $this->table . ".id GROUP BY Movies.id;";
         
         // On éxécute la requête  pour lister les films
         $resultFilms = parent::requete($requeteFilms)->fetchAll();
@@ -38,7 +38,7 @@ abstract class MoviesDAO extends DAO implements InterfaceDAO {
         $resultMovie = parent::requete($requeteMovie, [$id])->fetch();
         
         // On instancie filmModel  ou serieModels
-        $instance = (object)$this->createMovies([$resultMovie]);
+        $instance = (object)$this->createMovies([$resultMovie][0]);
 
         return $instance;
     }

@@ -20,8 +20,7 @@ class Router
         if(!empty($uri) && $uri != '/' && $uri[-1] === "/"){
             // On enlève le /
             $uri = substr($uri, 0, -1);
-
-            var_dump($uri);
+            
             // On envoie un code de redirection permanente
             http_response_code(301);
 

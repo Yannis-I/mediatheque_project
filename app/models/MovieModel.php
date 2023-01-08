@@ -81,5 +81,19 @@ abstract class MovieModel {
         array_push($this->acteurs, $acteurTab);
         return $this;
     }
+
+    /**
+     * Fonction qui renvoie le nom du personnage en fonction de l'id de l'acteur
+     * @param int $acteurID
+     * @return string
+     */
+    public function getPersonnage(int $acteurID):string{
+        foreach($this->acteurs as $acteur){
+            if($acteur["acteur"] == $acteurID){
+                return $acteur["personnage"];
+            }
+        }
+        return false;
+    }
 }
 ?>

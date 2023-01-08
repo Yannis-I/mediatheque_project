@@ -29,14 +29,14 @@ class FilmsController extends Controller{
 
     public function details($id){
         $filmsDao = new FilmsDAO;
-        $film = $filmsDao->findById($id);
+        $movie = $filmsDao->findById($id);
         
         $acteursDao = new ActeursDAO;
-        $acteurs = $acteursDao->findByFilmsID($film->getId());
+        $acteurs = $acteursDao->findByFilmsID($movie->getId());
         
         $realisateurDao = new DirectorsDAO;
-        $realisateur = $realisateurDao->findByFilmsID($film->getId());
+        $realisateur = $realisateurDao->findByFilmsID($movie->getId())[0];
         
-        $this->render('films/details', compact("film", "realisateur", "acteurs"), 'default');
+        $this->render('films/details', compact("movie", "realisateur", "acteurs"), 'default');
     }
 }

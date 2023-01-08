@@ -17,7 +17,7 @@ class SerieModel extends MovieModel {
         return count($this->saisons);
     }
     public function getNbrEpisodes(int $numSaison):int{
-        return $this->saisons[$numSaison];
+        return $this->saisons[$numSaison - 1]['nbr_episodes'];
     }
     public function getNbrEpisodesTotal():int{
         $nbrTotal = 0;
