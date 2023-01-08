@@ -32,7 +32,6 @@ header nav ul {
 }
 header nav ul a {
   text-decoration: none;
-  text-decoration: none;
   -webkit-text-decoration-color: #f7aa00;
           text-decoration-color: #f7aa00;
   -webkit-text-decoration-line: none;
@@ -41,7 +40,7 @@ header nav ul a {
           text-decoration-style: solid;
   color: #f7aa00;
 }
-header nav ul a div {
+header nav ul div {
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -52,16 +51,83 @@ header nav ul a div {
   -webkit-transition: background-color 0.2s, color 0.2s;
   transition: background-color 0.2s, color 0.2s;
 }
-header nav ul a div li {
+header nav ul div li {
   list-style: none;
   width: 150px;
   text-align: center;
   font-weight: bold;
   font-size: 1.4em;
 }
-header nav ul a div:hover {
+header nav ul div:hover {
   background-color: #f7aa00;
   color: #1f2830;
+}
+header nav ul .listeDeroulante {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+header nav ul .listeDeroulante > li {
+  cursor: default;
+  pointer-events: none;
+  position: relative;
+}
+header nav ul .listeDeroulante:hover > .list-cont {
+  height: 100px;
+}
+header nav ul .listeDeroulante .list-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  top: 50px;
+  height: 100px;
+  background-color: #f7aa00;
+  color: #1f2830;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  height: 0;
+  overflow: hidden;
+}
+header nav ul .listeDeroulante .list-cont a {
+  color: #1f2830;
+}
+header nav ul .listeDeroulante .list-cont__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+header nav ul .listeDeroulante .list-cont__items:hover {
+  background-color: #1f2830;
+  color: #f7aa00;
+}
+header nav ul .listeDeroulante .list-cont__items li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 50px;
 }
 
 footer {
@@ -294,6 +360,7 @@ main h1 {
   margin-top: 30px;
   padding-right: 30px;
   font-style: oblique;
+  line-height: 1.5;
 }
 .movie-details__guests {
   display: -webkit-box;
@@ -402,4 +469,129 @@ main h1 {
 }
 .movie-details__saisons table .colImpaire {
   background-color: #e0e4e7;
+}
+
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+.human-card {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 15px;
+  -webkit-transition: color 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, -webkit-box-shadow 0.3s;
+  transition: color 0.3s, box-shadow 0.3s;
+  transition: color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.human-card:hover {
+  background-color: #f1fdff;
+  -webkit-box-shadow: 0px 0px 10px #1f2830;
+          box-shadow: 0px 0px 10px #1f2830;
+}
+.human-card:hover > .human-card__photo img {
+  border-radius: 15px;
+}
+.human-card:hover > .human-card__datas h3 {
+  color: #692384;
+  text-decoration: underline;
+}
+.human-card__photo img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: border-radius 0.3s;
+  transition: border-radius 0.3s;
+}
+.human-card__datas {
+  padding: 0 20px 0 20px;
+}
+.human-card__datas h3 {
+  margin-top: 0;
+  color: #235784;
+}
+.human-card__datas .bio {
+  height: 95px;
+  text-align: justify;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0 30px 0 20px;
+  font-style: oblique;
+}
+
+.vedette {
+  margin: 20px;
+}
+.vedette .bio {
+  line-height: 1.5;
+  border-radius: 15px;
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+.vedette .bio::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.vedette .bio img {
+  float: left;
+  border-radius: 0 50% 50% 50%;
+  shape-outside: margin-box;
+  margin: 0 20px 20px 0;
+}
+.vedette .bio p {
+  text-align: justify;
+  padding: 30px;
+  margin: 0;
+}
+.vedette h2 {
+  margin-top: 50px;
+}
+.vedette .list-cont {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 335px;
+}
+.vedette .list-cont .affiche {
+  margin: 10px;
+  width: 210px;
+}
+.vedette .list-cont .affiche:hover > img {
+  width: 210px;
+  -webkit-box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+          box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+}
+.vedette .list-cont .affiche img {
+  height: auto;
+  width: 200px;
+  border-radius: 15px;
+  overflow: hidden;
+  -webkit-transition: width 0.3s, height 0.3s, -webkit-box-shadow 0.3s;
+  transition: width 0.3s, height 0.3s, -webkit-box-shadow 0.3s;
+  transition: width 0.3s, height 0.3s, box-shadow 0.3s;
+  transition: width 0.3s, height 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }

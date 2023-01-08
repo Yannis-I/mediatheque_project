@@ -8,7 +8,15 @@ abstract class HumansDAO extends DAO implements InterfaceDAO{
     protected function findAllHuman(): array {
         // On récupère les humains qui sont dans Human dans la base de données
         // On prépare la requête
-        $requeteHuman = "SELECT Human.id, Human.nom, Human.prenom, Human.bio, Human.url_photo FROM Human";
+        if($this->role == 'ACTOR'){
+            $jointure = "RIGHT JOIN Acteurs_Movies ON Human.id = Acteurs_Movies.id_acteur GROUP BY Human.id;";
+        } else if ($this->role == 'DIRECTOR'){
+            $jointure = "RIGHT JOIN Movies ON Human.id = Movies.id_director GROUP BY Human.id;";
+        }else{
+            $jointure = "GROUP BY Human.id;";
+        }
+
+        $requeteHuman = "SELECT Human.id, Human.nom, Human.prenom, Human.bio, Human.url_photo FROM Human " . $jointure;
         
         // On éxécute la requête
         $resultHumans = parent::requete($requeteHuman)->fetchAll();

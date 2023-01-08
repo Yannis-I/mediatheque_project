@@ -1,0 +1,57 @@
+a {
+  text-decoration: none;
+  color: initial;
+}
+
+.human-card {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  padding: 15px;
+  transition: color 0.3s, box-shadow 0.3s;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color2-3;
+    box-shadow: 0px 0px 10px $color-dark-grey;
+  }
+  &:hover > &__photo img {
+    border-radius: 15px;
+  }
+  &:hover > &__datas h3 {
+    color: $color3;
+    text-decoration: underline;
+  }
+
+  &__photo {
+    img {
+      height: 150px;
+      width: 150px;
+
+      border-radius: 50%;
+      object-fit: cover;
+      transition: border-radius 0.3s;
+    }
+  }
+
+  &__datas {
+    padding: 0 20px 0 20px;
+
+    h3 {
+      margin-top: 0;
+      color: $color2-1;
+    }
+    .bio {
+      //width: 75%;
+      height: 95px;
+      text-align: justify;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin: 0 30px 0 20px;
+      font-style: oblique;
+    }
+  }
+}

@@ -18,29 +18,78 @@ header {
 
       a {
         text-decoration: none;
-        text-decoration: none;
         text-decoration-color: $color1;
         text-decoration-line: none;
         text-decoration-style: solid;
         color: $color1;
+      }
 
-        div {
-          height: 100%;
+      div {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.2s, color 0.2s;
+
+        li {
+          list-style: none;
+          width: 150px;
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.4em;
+        }
+
+        &:hover {
+          background-color: $color1;
+          color: $color-dark-grey;
+        }
+      }
+
+      .listeDeroulante {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        & > li {
+          cursor: default;
+          pointer-events: none;
+          position: relative;
+        }
+
+        &:hover > .list-cont {
+          height: 100px;
+        }
+
+        .list-cont {
           display: flex;
-          align-items: center;
-          transition: background-color 0.2s, color 0.2s;
+          flex-direction: column;
+          position: absolute;
+          top: 50px;
+          height: 100px;
+          background-color: $color1;
+          color: $color-dark-grey;
+          transition: height 0.5s;
+          height: 0;
+          overflow: hidden;
 
-          li {
-            list-style: none;
-            width: 150px;
-            text-align: center;
-            font-weight: bold;
-            font-size: 1.4em;
+          a {
+            color: $color-dark-grey;
           }
 
-          &:hover {
-            background-color: $color1;
-            color: $color-dark-grey;
+          &__items {
+            display: flex;
+            flex-direction: column;
+
+            &:hover {
+              background-color: $color-dark-grey;
+              color: $color1;
+            }
+
+            li {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              height: 50px;
+            }
           }
         }
       }

@@ -1,0 +1,59 @@
+.vedette {
+  margin: 20px;
+
+  .bio {
+    line-height: 1.5;
+
+    border-radius: 15px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+
+    img {
+      float: left;
+      border-radius: 0 50% 50% 50%;
+      shape-outside: margin-box;
+      margin: 0 20px 20px 0;
+    }
+    p {
+      text-align: justify;
+      padding: 30px;
+      margin: 0;
+    }
+  }
+
+  h2 {
+    margin-top: 50px;
+  }
+
+  .list-cont {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 335px;
+
+    .affiche {
+      margin: 10px;
+      width: 210px;
+
+      &:hover > img {
+        width: 210px;
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.8);
+      }
+
+      img {
+        height: auto;
+        width: 200px;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: width 0.3s, height 0.3s, box-shadow 0.3s;
+      }
+    }
+  }
+}
