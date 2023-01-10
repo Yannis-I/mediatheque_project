@@ -1,7 +1,7 @@
 <?php
-namespace app\dao;
+namespace app\models\dao;
 
-use app\models\DirectorModel;
+use app\models\beans\DirectorModel;
 
 final class DirectorsDAO extends HumansDAO{
     use HumansTraitDAO;

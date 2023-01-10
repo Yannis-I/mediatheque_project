@@ -1,5 +1,5 @@
 <?php
-namespace app\models;
+namespace app\models\beans;
 
 class FilmModel extends MovieModel {
     private string $duree;

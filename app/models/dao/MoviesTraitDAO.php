@@ -1,6 +1,6 @@
 <?php
 
-namespace app\dao;
+namespace app\models\dao;
 
 Trait MoviesTraitDAO {
     private function findByHumanId(string $sql, int $humanId):array{

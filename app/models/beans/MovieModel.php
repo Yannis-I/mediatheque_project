@@ -1,5 +1,5 @@
 <?php
-namespace app\models;
+namespace app\models\beans;
 
 abstract class MovieModel {
     protected int $id;

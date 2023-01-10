@@ -1,9 +1,9 @@
 <?php
 namespace app\controllers;
 
-use app\dao\ActeursDAO;
-use app\dao\DirectorsDAO;
-use app\dao\FilmsDAO;
+use app\models\dao\ActeursDAO;
+use app\models\dao\DirectorsDAO;
+use app\models\dao\FilmsDAO;
 
 class FilmsController extends Controller{
     

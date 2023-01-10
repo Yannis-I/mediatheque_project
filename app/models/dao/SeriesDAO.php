@@ -1,8 +1,8 @@
 <?php
 
-namespace app\dao;
+namespace app\models\dao;
 
-use app\models\SerieModel;
+use app\models\beans\SerieModel;
 
 final class SeriesDAO extends MoviesDAO {
     use MoviesTraitDAO;

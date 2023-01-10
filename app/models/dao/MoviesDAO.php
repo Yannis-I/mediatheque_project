@@ -1,6 +1,6 @@
 <?php
 
-namespace app\dao;
+namespace app\models\dao;
 
 abstract class MoviesDAO extends DAO implements InterfaceDAO {
     protected string $table;
@@ -142,9 +142,9 @@ abstract class MoviesDAO extends DAO implements InterfaceDAO {
                             WHERE Acteurs_Movies.id_movie=?;";
 
         if($this->table == "Films"){
-            $object = "app\models\FilmModel";
+            $object = "app\models\beans\FilmModel";
         }else if($this->table == "Series_Saisons"){
-            $object = "app\models\SerieModel";
+            $object = "app\models\beans\SerieModel";
         }
 
         $instance = new $object;

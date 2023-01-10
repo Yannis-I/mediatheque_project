@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\models\beans;
 
 class DirectorModel extends HumanModel {
     private string $role = 'DIRECTOR';

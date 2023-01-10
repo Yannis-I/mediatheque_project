@@ -1,6 +1,6 @@
 <?php
 
-namespace app\dao;
+namespace app\models\dao;
 
 use core\Db;
 

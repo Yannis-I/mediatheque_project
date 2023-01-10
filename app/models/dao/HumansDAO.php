@@ -1,6 +1,6 @@
 <?php
 
-namespace app\dao;
+namespace app\models\dao;
 
 abstract class HumansDAO extends DAO implements InterfaceDAO{
     protected string $role;
@@ -79,9 +79,9 @@ abstract class HumansDAO extends DAO implements InterfaceDAO{
     private function createHumans(array $params):object{
         
         if($this->role == "ACTOR"){
-            $object = "app\models\ActeurModel";
+            $object = "app\models\beans\ActeurModel";
         }else if($this->role == "DIRECTOR"){
-            $object = "app\models\DirectorModel";
+            $object = "app\models\beans\DirectorModel";
         }
         $instance = new $object;
         $instance->setId($params['id']);

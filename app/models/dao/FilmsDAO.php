@@ -1,8 +1,8 @@
 <?php
 
-namespace app\dao;
+namespace app\models\dao;
 
-use app\models\FilmModel;
+use app\models\beans\FilmModel;
 
 final class FilmsDAO extends MoviesDAO
 {

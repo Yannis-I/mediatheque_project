@@ -1,6 +1,6 @@
 <?php
 
-namespace app\models;
+namespace app\models\beans;
 
 class ActeurModel extends HumanModel {
     private string $role = 'ACTOR';
