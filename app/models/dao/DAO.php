@@ -8,6 +8,7 @@ class DAO extends Db
 {
     // Instance de Db
     private $db;
+    protected string $table;
 
     public function __construct(){}
 

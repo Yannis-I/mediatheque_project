@@ -5,9 +5,11 @@ use app\models\beans\DirectorModel;
 
 final class DirectorsDAO extends HumansDAO{
     use HumansTraitDAO;
+    use RandomTraitDAO;
 
     public function __construct(){
         $this->role = "DIRECTOR";
+        $this->table = "Movies";
     }
 
     public function findAll():array{

@@ -5,8 +5,10 @@ use app\models\beans\ActeurModel;
 
 final class ActeursDAO extends HumansDAO{
     use HumansTraitDAO;
+    use RandomTraitDAO;
     public function __construct(){
         $this->role = "ACTOR";
+        $this->table = "Acteurs_Movies";
     }
 
     public function findAll():array{

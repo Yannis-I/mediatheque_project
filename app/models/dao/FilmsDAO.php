@@ -7,6 +7,7 @@ use app\models\beans\FilmModel;
 final class FilmsDAO extends MoviesDAO
 {
     use MoviesTraitDAO;
+    use RandomTraitDAO;
 
     public function __construct(){
         $this->table = "Films";

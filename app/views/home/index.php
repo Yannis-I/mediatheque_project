@@ -1,0 +1,1 @@
+<?php tests\Tests::varDump($datas) ?>

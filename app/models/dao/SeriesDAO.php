@@ -6,6 +6,7 @@ use app\models\beans\SerieModel;
 
 final class SeriesDAO extends MoviesDAO {
     use MoviesTraitDAO;
+    use RandomTraitDAO;
 
     public function __construct(){
         $this->table = "Series_Saisons";

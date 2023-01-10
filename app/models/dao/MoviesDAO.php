@@ -3,7 +3,6 @@
 namespace app\models\dao;
 
 abstract class MoviesDAO extends DAO implements InterfaceDAO {
-    protected string $table;
 
     protected function findAllMovies(): array {
         // On récupère la liste de toutes les movies qui sont dans films dans la base de données
