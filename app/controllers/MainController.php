@@ -11,16 +11,16 @@ class MainController extends Controller{
     public function index()
     {
         $filmsDao = new FilmsDAO;
-        $listFilms = $filmsDao->findRandom(3);
+        $listFilms = $filmsDao->findRandom(4);
 
         $seriesDao = new SeriesDAO;
-        $listSeries = $seriesDao->findRandom(3);
+        $listSeries = $seriesDao->findRandom(4);
 
         $acteursDao = new ActeursDAO;
-        $listActeurs = $acteursDao->findRandom(3);
+        $listActeurs = $acteursDao->findRandom(4);
 
         $realisateurDao = new DirectorsDAO;
-        $listRealisateurs = $realisateurDao->findRandom(3);
+        $listRealisateurs = $realisateurDao->findRandom(4);
 
         $datas = [$listFilms, $listSeries, $listActeurs, $listRealisateurs];
 

@@ -151,6 +151,8 @@ main {
   margin: auto;
 }
 main h1 {
+  margin-top: 80px;
+  margin-bottom: 60px;
   text-align: center;
 }
 
@@ -594,4 +596,154 @@ a {
   transition: width 0.3s, height 0.3s, -webkit-box-shadow 0.3s;
   transition: width 0.3s, height 0.3s, box-shadow 0.3s;
   transition: width 0.3s, height 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s;
+}
+
+.acceuil-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px;
+}
+.acceuil-container h1,
+.acceuil-container h2 {
+  text-transform: uppercase;
+}
+.acceuil-container section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px;
+  -webkit-box-shadow: 5px 5px 15px #1f2830;
+          box-shadow: 5px 5px 15px #1f2830;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+.acceuil-container section .en-tete {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+.acceuil-container section .en-tete .voir-tout > a {
+  color: #235784;
+  font-weight: bold;
+}
+.acceuil-container section .en-tete .voir-tout > a:hover {
+  color: #692384;
+  text-decoration: underline;
+}
+.acceuil-container section .liste {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.acceuil-container section .liste .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.acceuil-container section .liste .item .bulle {
+  display: none;
+}
+.acceuil-container .films .liste,
+.acceuil-container .series .liste {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 475px;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+.acceuil-container .films .liste .item,
+.acceuil-container .series .liste .item {
+  -ms-flex-preferred-size: 250px;
+      flex-basis: 250px;
+  -webkit-transition: -webkit-box-flex 0.3s;
+  transition: -webkit-box-flex 0.3s;
+  transition: flex 0.3s;
+  transition: flex 0.3s, -webkit-box-flex 0.3s, -ms-flex 0.3s;
+  margin: 10px;
+  -webkit-box-sizing: margin-box;
+          box-sizing: margin-box;
+}
+.acceuil-container .films .liste .item:hover,
+.acceuil-container .series .liste .item:hover {
+  -ms-flex-preferred-size: 313px;
+      flex-basis: 313px;
+}
+.acceuil-container .films .liste .item:hover img,
+.acceuil-container .series .liste .item:hover img {
+  -webkit-box-shadow: 5px 5px 15px #1f2830;
+          box-shadow: 5px 5px 15px #1f2830;
+}
+.acceuil-container .films .liste .item img,
+.acceuil-container .series .liste .item img {
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid #f7aa00;
+}
+.acceuil-container .acteurs .liste,
+.acceuil-container .realisateurs .liste {
+  height: 300px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+.acceuil-container .acteurs .liste .item,
+.acceuil-container .realisateurs .liste .item {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 10px;
+}
+.acceuil-container .acteurs .liste .item:hover img,
+.acceuil-container .realisateurs .liste .item:hover img {
+  width: 200px;
+  height: 250px;
+  border-radius: 15px;
+}
+.acceuil-container .acteurs .liste .item img,
+.acceuil-container .realisateurs .liste .item img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border: 3px solid #f7aa00;
+  -webkit-transition: width 0.3s, height 0.3s, border-radius 0.3s;
+  transition: width 0.3s, height 0.3s, border-radius 0.3s;
+}
+.acceuil-container .acteurs .liste .item h3,
+.acceuil-container .realisateurs .liste .item h3 {
+  text-align: center;
 }

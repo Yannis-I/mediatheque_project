@@ -1,0 +1,111 @@
+.acceuil-container {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+
+  h1,
+  h2 {
+    text-transform: uppercase;
+  }
+
+  section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 5px 5px 15px $color-dark-grey;
+    border-radius: 15px;
+    margin-bottom: 30px;
+
+    .en-tete {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: baseline;
+
+      .voir-tout > a {
+        color: $color2-1;
+        font-weight: bold;
+
+        &:hover {
+          color: $color3;
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .liste {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+
+        .bulle {
+          display: none;
+        }
+      }
+    }
+  }
+  .films,
+  .series {
+    .liste {
+      align-items: center;
+      height: 475px;
+      flex-wrap: nowrap;
+      .item {
+        flex-basis: 250px;
+        transition: flex 0.3s;
+        margin: 10px;
+        box-sizing: margin-box;
+
+        &:hover {
+          flex-basis: 313px;
+
+          & img {
+            box-shadow: 5px 5px 15px $color-dark-grey;
+          }
+        }
+
+        img {
+          width: 100%;
+          border-radius: 15px;
+          border: 3px solid $color1;
+        }
+      }
+    }
+  }
+  .acteurs,
+  .realisateurs {
+    .liste {
+      height: 300px;
+      align-items: center;
+      flex-wrap: nowrap;
+
+      .item {
+        justify-content: center;
+        margin: 10px;
+
+        &:hover img {
+          width: 200px;
+          height: 250px;
+          border-radius: 15px;
+        }
+
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 3px solid $color1;
+          transition: width 0.3s, height 0.3s, border-radius 0.3s;
+        }
+
+        h3 {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
