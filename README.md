@@ -19,7 +19,9 @@ Sinon, il faut paramétrer le server apache pour activer l'option. Voir la DOC A
 
 ### Le server apache
 
-Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour rediriger les URLs vers <em>index.php</em>.
+Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour rediriger les URLs vers <em>index.php</em>.</br>
+</br>
+Cependant apache n'est parfois pas configuré pour lire automatiquement le fichier <em>.htaccess</em>. Si la redirection ne fonctionne pas, testez : "<b>sudo a2enmod rewrite</b>" (pour linux). Sinon, il faut paramétrer le server apache pour activer l'option. Voir la DOC Apache.
 
 ### La base de données
 
