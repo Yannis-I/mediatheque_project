@@ -92,7 +92,7 @@
 
       &__synopsis {
         width: 75%;
-        height: 95px;
+        height: 100px;
         text-align: justify;
         display: -webkit-box;
         -webkit-line-clamp: 5;
@@ -100,12 +100,12 @@
         overflow: hidden;
         margin: 0 30px 0 20px;
         font-style: oblique;
+        line-height: 20px;
       }
     }
   }
 
   &:hover {
-    background-color: $color2-3;
     box-shadow: 0 0 10px 0 black;
   }
 }

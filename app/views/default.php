@@ -56,7 +56,7 @@
         <?= $contenu ?>
     </main>
 
-    <footer>
+    <footer <?= (isset($error)) ? "class='error__footer'" : "" ?>>
         <p>&copy; Cyb3rToY all right reserved</p>
     </footer>
 

@@ -2,6 +2,9 @@
 namespace core;
 
 use app\controllers\MainController;
+use TypeError;
+use app\controllers\ErrorController;
+
 /**
  * Routeur principal
  */
@@ -52,15 +55,19 @@ class Router
                 $action = (isset($params[0])) ? array_shift($params) : 'index';
 
                 if(method_exists($controller, $action)){
-                    // Si il reste des paramètres on les passe à la méthode
-                    (isset($params[0])) ? call_user_func_array([$controller, $action], $params) : $controller->$action();
+
+                    try {
+                        // Si il reste des paramètres on les passe à la méthode
+                        (isset($params[0])) ? call_user_func_array([$controller, $action], $params) : $controller->$action();
+                    } catch (TypeError $e) {
+                        $this->controller404();
+                    }
+                    
                 }else{
-                    http_response_code(404);
-                    echo "La page recherchée n'existe pas";
+                    $this->controller404();
                 }
             }else{
-                http_response_code(404);
-                echo "La page recherchée n'existe pas";
+                $this->controller404();
             }
 
         }else{
@@ -71,5 +78,10 @@ class Router
             // On appelle la méthode index
             $controller->index();
         }
+    }
+    private function controller404(){
+        http_response_code(404);
+        $controller = new ErrorController;
+        $controller->page404();
     }
 }

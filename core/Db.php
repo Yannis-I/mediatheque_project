@@ -11,20 +11,14 @@ class Db extends PDO
     // Instance unique de la classe
     private static $instance;
 
-    // Informations de connexion
-    private const DBHOST = 'localhost';
-    private const DBUSER = 'AppMediatheque';
-    private const DBPASS = 'azerty';
-    private const DBNAME = 'Mediatheque';
-
     private function __construct()
     {
         // DSN de connexion
-        $_dsn = 'mysql:dbname='. self::DBNAME . ';host=' . self::DBHOST;
+        $_dsn = 'mysql:dbname='. $_ENV['DBNAME'] . ';host=' . $_ENV['DBHOST'];
 
         // On appelle le constructeur de la classe PDO
         try{
-            parent::__construct($_dsn, self::DBUSER, self::DBPASS);
+            parent::__construct($_dsn, $_ENV['DBUSER'], $_ENV['DBPASS']);
 
             $this->setAttribute(PDO::MYSQL_ATTR_INIT_COMMAND, 'SET NAMES utf8');
             $this->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

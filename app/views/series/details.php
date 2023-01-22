@@ -3,7 +3,7 @@
 
     <div class="movie-details__base">
         <div class="movie-details__base__affiche" >
-            <img src="../../assets/images/affiches/<?= $movie->getUrl_affiche() ?>.jpg">
+            <img src="/assets/images/affiches/<?= $movie->getUrl_affiche() ?>.jpg">
         </div>
 
         <div class="movie-details__base__datas">
@@ -17,10 +17,10 @@
     <div class="movie-details__guests">
         <div class="movie-details__guests__director">
             <h3 class="def">Réalisateur</h3>
-            <a href="../../realisateurs/details/<?= $realisateur->getId() ?>">
+            <a href="/realisateurs/details/<?= $realisateur->getId() ?>">
                 <div class="item">
                     <div class="item__photo photo">
-                        <img src="../../assets/images/directors/<?= $realisateur->getUrl_photo() ?>.jpg">
+                        <img src="/assets/images/directors/<?= $realisateur->getUrl_photo() ?>.jpg">
                     </div>
                     <div class="nom"><?= $realisateur->getPrenom() . " " . $realisateur->getNom() ?></div>
                 </div>
@@ -30,10 +30,10 @@
             <h3 class="acteurs">Acteurs</h3>
             <div class="movie-details__guests__acteurs__items">
                 <?php foreach($acteurs as $acteur): ?>
-                    <a href="../../acteurs/details/<?= $acteur->getId() ?>">
+                    <a href="/acteurs/details/<?= $acteur->getId() ?>">
                         <div class="item">
                             <div class="item__photo photo">
-                                <img src="../../assets/images/photos/<?= $acteur->getUrl_photo() ?>.jpg" >
+                                <img src="/assets/images/photos/<?= $acteur->getUrl_photo() ?>.jpg" >
                             </div>
                             <div class="nom"><?= $acteur->getPrenom() . " " . $acteur->getNom() ?></div>
                             <div class="personnage">

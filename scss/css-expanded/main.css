@@ -306,7 +306,7 @@ main h1 {
 }
 .movie__content__grid__synopsis {
   width: 75%;
-  height: 95px;
+  height: 100px;
   text-align: justify;
   display: -webkit-box;
   -webkit-line-clamp: 5;
@@ -314,9 +314,9 @@ main h1 {
   overflow: hidden;
   margin: 0 30px 0 20px;
   font-style: oblique;
+  line-height: 20px;
 }
 .movie:hover {
-  background-color: #f1fdff;
   -webkit-box-shadow: 0 0 10px 0 black;
           box-shadow: 0 0 10px 0 black;
 }
@@ -496,7 +496,6 @@ a {
   cursor: pointer;
 }
 .human-card:hover {
-  background-color: #f1fdff;
   -webkit-box-shadow: 0px 0px 10px #1f2830;
           box-shadow: 0px 0px 10px #1f2830;
 }
@@ -746,4 +745,14 @@ a {
 .acceuil-container .acteurs .liste .item h3,
 .acceuil-container .realisateurs .liste .item h3 {
   text-align: center;
+}
+
+.error404 p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.error__footer {
+  display: none;
 }

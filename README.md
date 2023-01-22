@@ -36,9 +36,13 @@ Le server apache utilise le fichier <b>.htaccess</b> à la racine du projet pour
     </ol>
     </li>
     <li>
-    Le fichier de configuration pour l'accès à la base de données se trouve dans <b>core/Db.php</b>
+    Les informations d'accès à la base de données se trouve dans <b>.env</b> à la racine du projet
     </li>
 </ul>
+
+### L'autoloader
+
+J'ai volontairement rajouter le dossier vendor dans le .gitignore. Pour faire fonctionner l'autoloader, vous devez avoir installé composer. Tapez ensuite les commandes "composer init" puis "composer dump-autoload".
 
 ### Le SCSS
 
